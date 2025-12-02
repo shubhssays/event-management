@@ -1,0 +1,151 @@
+.container {
+  height: 100vh;
+  background: var(--gradient-background);
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  background: transparent;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xl);
+}
+
+.logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.navLink {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  transition: opacity var(--transition-base);
+}
+
+.navLink:hover {
+  opacity: 0.8;
+}
+
+.signIn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(8px);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.signIn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  max-width: 1600px;
+  margin: 0 auto;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 48px;
+  align-items: start;
+}
+
+.flyerColumn {
+  height: 60%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.formColumn {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: var(--spacing-sm);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.formColumn::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.formColumn {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .flyerColumn {
+    position: static;
+  }
+
+  .formColumn {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .nav {
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+
+  .main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
