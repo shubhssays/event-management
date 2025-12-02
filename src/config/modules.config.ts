@@ -1,0 +1,58 @@
+import type { ModuleConfig } from '../types/module.types';
+
+export const MODULE_CONFIGS: ModuleConfig[] = [
+  {
+    id: 'capacity',
+    type: 'capacity',
+    label: 'Capacity',
+    icon: '👥',
+    description: 'Set guest capacity',
+    maxInstances: 1,
+    defaultData: { capacity: 10 },
+  },
+  {
+    id: 'photo-gallery',
+    type: 'photo-gallery',
+    label: 'Photo gallery',
+    icon: '📷',
+    description: 'Add photos',
+    maxInstances: 1,
+    defaultData: { photos: [] },
+  },
+  {
+    id: 'links',
+    type: 'links',
+    label: 'Links',
+    icon: '🔗',
+    description: 'Add custom links',
+    maxInstances: 1,
+    defaultData: { links: [{ label: '', url: '' }] },
+  },
+  {
+    id: 'privacy',
+    type: 'privacy',
+    label: 'Privacy',
+    icon: '🔒',
+    description: 'Privacy settings',
+    maxInstances: 1,
+    defaultData: { isPrivate: false },
+  },
+  {
+    id: 'announcements',
+    type: 'announcements',
+    label: 'Announcements',
+    icon: '📢',
+    description: 'Add announcements',
+    maxInstances: 1,
+    defaultData: { announcements: [] },
+  },
+  {
+    id: 'rsvp',
+    type: 'rsvp',
+    label: 'RSVP',
+    icon: '✓',
+    description: 'Manage RSVPs',
+    maxInstances: 1,
+    defaultData: { requireRSVP: true },
+  },
+];
